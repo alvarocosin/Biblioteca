@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Biblioteca"
         mc:Ignorable="d"
+        WindowState="Maximized"
+        WindowStyle="None"
+        Background="{DynamicResource PrimaryBackgroundColor}"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.05*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,2,5,0" Height="33" Orientation="Horizontal" FlowDirection="RightToLeft">
+            <Button x:Name="Exit" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}" Tag="IsCloseButton" Cursor="Hand" Click="Exit_Click"/>
+            <Button x:Name="Restore" Margin="5,0" Cursor="Hand" Click="Restore_Click">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource IconButtonsStyle}">
+                        <Setter Property="Content" Value="{DynamicResource maximize}"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=home, Path=WindowState}" Value="Maximized">
+                                <Setter Property="Content" Value="{DynamicResource restore}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="Minimize" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" Cursor="Hand" Click="Minimize_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:Biblioteca"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="style/Icons.xaml"/>
+                <ResourceDictionary Source="style/MainStyle.xaml"/>
+                <ResourceDictionary Source="style/LightTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

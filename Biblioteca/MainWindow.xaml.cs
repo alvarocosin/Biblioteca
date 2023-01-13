@@ -24,5 +24,20 @@ namespace Biblioteca
         {
             InitializeComponent();
         }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void Restore_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Minimize_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
