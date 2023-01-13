@@ -10,11 +10,20 @@
         Background="{DynamicResource PrimaryBackgroundColor}"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0.05*"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,2,5,0" Height="33" Orientation="Horizontal" FlowDirection="RightToLeft">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.15*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Background="{DynamicResource SecundaryBackgroundColor}">
+            <StackPanel Margin="0 30 0 0">
+                <Label Content="Biblioteca"/>
+                <RadioButton x:Name="NavigateToHome" Content="Home" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Cursor="Hand" />
+                <RadioButton x:Name="NavigateToNewSession" Content="New" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource new}" Margin="0 5 0 5" />
+                <RadioButton x:Name="NavigateToOpenSession" Content="Open" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource open}" Cursor="Hand" />
+                <RadioButton x:Name="NavigateToCalibration" Content="Calibration" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource calib}" Cursor="Hand" />
+            </StackPanel>
+        </Border>
+        <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,2,5,0" Height="33" Orientation="Horizontal" FlowDirection="RightToLeft">
             <Button x:Name="Exit" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}" Tag="IsCloseButton" Cursor="Hand" Click="Exit_Click"/>
             <Button x:Name="Restore" Margin="5,0" Cursor="Hand" Click="Restore_Click">
                 <Button.Style>
@@ -30,5 +39,11 @@
             </Button>
             <Button x:Name="Minimize" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" Cursor="Hand" Click="Minimize_Click"/>
         </StackPanel>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.05*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+        </Grid>
     </Grid>
 </Window>
