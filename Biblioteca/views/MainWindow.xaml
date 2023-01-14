@@ -16,11 +16,10 @@
         </Grid.ColumnDefinitions>
         <Border Background="{DynamicResource SecundaryBackgroundColor}">
             <StackPanel Margin="0 30 0 0">
-                <Label Content="Biblioteca"/>
-                <RadioButton x:Name="NavigateToHome" Content="Home" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Cursor="Hand" />
-                <RadioButton x:Name="NavigateToNewSession" Content="New" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource new}" Margin="0 5 0 5" />
-                <RadioButton x:Name="NavigateToOpenSession" Content="Open" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource open}" Cursor="Hand" />
-                <RadioButton x:Name="NavigateToCalibration" Content="Calibration" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource calib}" Cursor="Hand" />
+                <Label Content="Biblioteca" HorizontalAlignment="Center" FontSize="33" FontWeight="Thin" Margin="0 20 0 20" Foreground="{DynamicResource TextSecundaryColor}"/>
+                <RadioButton x:Name="BookList" Content="Lista de libros" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource books}" Cursor="Hand" Checked="BookList_Checked"/>
+                <RadioButton x:Name="Liked" Content="Favoritos" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource liked}" Margin="0 5 0 5" Checked="Liked_Checked"/>
+                <RadioButton x:Name="ToRead" Content="Pendientes" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource pending}" Cursor="Hand" Checked="ToRead_Checked"/>
             </StackPanel>
         </Border>
         <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,2,5,0" Height="33" Orientation="Horizontal" FlowDirection="RightToLeft">
@@ -44,6 +43,7 @@
                 <RowDefinition Height="0.05*"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+            <ContentControl x:Name="CC" Grid.Row="1"/>
         </Grid>
     </Grid>
 </Window>

@@ -14,7 +14,7 @@
 
     <!-- Typograhy Colors -->
     <SolidColorBrush x:Key="TextPrimaryColor" Color="#020F16"/>
-    <SolidColorBrush x:Key="TextSecundaryColor" Color="#434344"/>
+    <SolidColorBrush x:Key="TextSecundaryColor" Color="#545455"/>
 
     <!-- Icons Colors -->
     <SolidColorBrush x:Key="ActionIconColor" Color="#434344"/>
