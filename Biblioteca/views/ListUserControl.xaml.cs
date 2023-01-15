@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,10 +29,16 @@ namespace Biblioteca.views
 
             ObservableCollection<Book> books = new ObservableCollection<Book>();
 
-            books.Add(new Book("1", "El extranjero", "Albert Camus", "Álvaro"));
-            books.Add(new Book("2", "El extranjero", "Albert Camus", "Álvaro"));
-            books.Add(new Book("3", "El extranjero", "Albert Camus", "Álvaro"));
-            books.Add(new Book("4", "El extranjero", "Albert Camus", "Álvaro"));
+            string workingDirectory = Environment.CurrentDirectory;
+            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+            string csvfile = projectDirectory + "\\Biblioteca\\res\\biblioteca.csv";
+
+            string[] lines = File.ReadAllLines(csvfile);
+            foreach (string line in lines)
+            {
+                string[] columns = line.Split(',');
+                books.Add(new Book(columns[0], columns[1], columns[2]));
+            }
         
             booksDataGrid.ItemsSource = books;
         }
