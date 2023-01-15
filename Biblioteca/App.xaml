@@ -12,18 +12,7 @@
                 <ResourceDictionary Source="style/LightTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <!--DataGrid-->
-            <Style x:Key="ColumnHeaderGripperStyle" TargetType="{x:Type Thumb}">
-                <Setter Property="Width" Value="8"/>
-                <Setter Property="Background" Value="Transparent"/>
-                <Setter Property="Cursor" Value="SizeWE"/>
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Thumb}">
-                            <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}"/>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
+            
             <Style x:Key="{ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}" TargetType="{x:Type Button}">
                 <Setter Property="Template">
                     <Setter.Value>
@@ -64,7 +53,7 @@
                 <Setter Property="CanUserDeleteRows" Value="False"/>
                 <Setter Property="CanUserReorderColumns" Value="False"/>
                 <Setter Property="CanUserResizeRows" Value="False"/>
-                <Setter Property="FontSize" Value="13"/>
+                <Setter Property="FontSize" Value="15"/>
                 <Setter Property="ColumnWidth" Value="*"/>
                 <Setter Property="GridLinesVisibility" Value="None"/>
                 <Setter Property="Template">
@@ -130,6 +119,18 @@
                     </Setter.Value>
                 </Setter>
             </Style>
+            <Style x:Key="ColumnHeaderGripperStyle" TargetType="{x:Type Thumb}">
+                <Setter Property="Width" Value="8"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Cursor" Value="SizeWE"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Thumb}">
+                            <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}"/>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
             <Style x:Key="DataGridColumnHeaderStyle1" TargetType="{x:Type DataGridColumnHeader}">
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
                 <Setter Property="Background" Value="Transparent"/>
@@ -184,11 +185,11 @@
                 </Setter>
                 <Style.Triggers>
                     <Trigger Property="IsMouseOver" Value="True">
-                        <Setter Property="Background" Value="#623ed0"/>
+                        <Setter Property="Background" Value="#63b879"/>
                         <Setter Property="Foreground" Value="White"/>
                     </Trigger>
                     <Trigger Property="IsSelected" Value="True">
-                        <Setter Property="Background" Value="#623ed0"/>
+                        <Setter Property="Background" Value="#63b879"/>
                         <Setter Property="Foreground" Value="White"/>
                     </Trigger>
                     <MultiTrigger>

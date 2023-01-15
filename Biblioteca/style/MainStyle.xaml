@@ -92,16 +92,16 @@
     <!-- Start: SearchBar -->
     <Style x:Key="textboxFilter" TargetType="TextBox">
         <Setter Property="Background" Value="#ffffff"/>
-        <Setter Property="Foreground" Value="#b0b9c6"/>
+        <Setter Property="Foreground" Value="#aaaaaa"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="FontSize" Value="12"/>
-        <Setter Property="Padding" Value="10 7"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Padding" Value="13 9"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="0 10"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TextBoxBase">
-                    <Border x:Name="border" CornerRadius="15" Background="#EEEEEE" SnapsToDevicePixels="True"
+                    <Border x:Name="border" CornerRadius="15" Background="#ffffff" SnapsToDevicePixels="True"
                             BorderThickness="1" BorderBrush="#e0e6ed">
                         <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden"
                                       VerticalScrollBarVisibility="Hidden"/>
