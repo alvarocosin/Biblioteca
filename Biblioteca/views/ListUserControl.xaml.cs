@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Biblioteca.models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,15 @@ namespace Biblioteca.views
         public ListUserControl()
         {
             InitializeComponent();
+
+            ObservableCollection<Book> books = new ObservableCollection<Book>();
+
+            books.Add(new Book("1", "El extranjero", "Albert Camus", "Álvaro"));
+            books.Add(new Book("2", "El extranjero", "Albert Camus", "Álvaro"));
+            books.Add(new Book("3", "El extranjero", "Albert Camus", "Álvaro"));
+            books.Add(new Book("4", "El extranjero", "Albert Camus", "Álvaro"));
+        
+            booksDataGrid.ItemsSource = books;
         }
     }
 }
