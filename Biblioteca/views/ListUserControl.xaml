@@ -23,7 +23,7 @@
             <Path x:Name="Icon" Data="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" Height="17" Width="17" Stretch="Uniform" Fill="#BBBBBB" VerticalAlignment="Center" Margin="0 0 10 0" HorizontalAlignment="Right"/>
         </Grid>
         <!--DataGrid-->
-        <DataGrid ItemsSource="{Binding DataGridCollection}" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="1" Margin="70 30 70 0">
+        <DataGrid ItemsSource="{Binding DataGridCollection}" VirtualizingPanel.VirtualizationMode="Standard" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="1" Margin="70 30 70 0">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Título" IsReadOnly="True" CanUserResize="False" Width="1.5*" Binding="{Binding Title}"/>
                 <DataGridTextColumn Header="Autor" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Author}"/>
@@ -32,12 +32,8 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <ToggleButton Margin="5 0 0 0" Background="Transparent" BorderThickness="0" IsChecked="{Binding LikeChecked}">
-                                    <Path x:Name="LikeIcon" Data="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z" Height="22" Width="22" Stretch="Uniform" Fill="#eed4b0" VerticalAlignment="Center"/>
-                                </ToggleButton>
-                                <ToggleButton Margin="10 0 0 0" Background="Transparent" BorderThickness="0" IsChecked="{Binding ToReadChecked}">
-                                    <Path x:Name="ToReadIcon" Data="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12S17.5 2 12 2M16.3 15.2L11 12.3V7H12.5V11.4L17 13.9L16.3 15.2Z" Height="22" Width="22" Stretch="Uniform" Fill="#eed4b0" VerticalAlignment="Center"/>
-                                </ToggleButton>
+                                <ToggleButton Style="{StaticResource LikeToReadIcons}" Content="{DynamicResource likedfilled}" Tag="IsLikedButton" Cursor="Hand" Margin="10 0 0 0"/>
+                                <ToggleButton Style="{StaticResource LikeToReadIcons}" Content="{DynamicResource pendingfilled}" Tag="IsPendingButton" Cursor="Hand" Margin="10 0 0 0"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

@@ -130,6 +130,7 @@ namespace Biblioteca.views
                 .ToString()
                 .Normalize(NormalizationForm.FormC);
         }
+
     }
 
 }
