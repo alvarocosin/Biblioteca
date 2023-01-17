@@ -29,20 +29,13 @@ namespace Biblioteca.views
         private string _filterString;
         private ObservableCollection<Book> books = new ObservableCollection<Book>();
 
-        public ListUserControl()
+        public ListUserControl(ObservableCollection<Book> books)
         {
             InitializeComponent();
 
-            string workingDirectory = Environment.CurrentDirectory;
-            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
-            string csvfile = projectDirectory + "\\Biblioteca\\res\\biblioteca.csv";
+            this.books = books;
 
-            string[] lines = File.ReadAllLines(csvfile);
-            foreach (string line in lines)
-            {
-                string[] columns = line.Split(',');
-                books.Add(new Book(columns[0], columns[1], columns[2]));
-            }
+            booksFound.Content = books.Count.ToString() + " libros encontrados";
 
             DataGridCollection = CollectionViewSource.GetDefaultView(TestData);
             DataGridCollection.Filter = new Predicate<object>(Filter);
@@ -95,6 +88,10 @@ namespace Biblioteca.views
                 {
                     yield return book;
                 }
+            }
+            set
+            {
+                NotifyPropertyChanged("TestData");
             }
         }
 

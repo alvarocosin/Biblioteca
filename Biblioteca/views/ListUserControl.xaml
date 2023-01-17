@@ -14,7 +14,7 @@
             <RowDefinition Height="0.25*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label Content="Lista de libros" FontSize="32" FontWeight="DemiBold" Foreground="{DynamicResource TextPrimaryColor}" Margin="40 30 0 0"/>
+        <Label Content="Lista de libros" FontSize="35" FontWeight="DemiBold" Foreground="{DynamicResource TextPrimaryColor}" Margin="50 40 0 0"/>
         <Label x:Name="booksFound" FontSize="27" FontWeight="DemiBold" VerticalAlignment="Bottom" Margin="80 30 0 0" Foreground="{DynamicResource TextPrimaryColor}"/>
         <!--SearchBar-->
         <Grid Width="300" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 100 0">
@@ -32,8 +32,8 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <ToggleButton Style="{StaticResource LikeToReadIcons}" Content="{DynamicResource likedfilled}" Tag="IsLikedButton" Cursor="Hand" Margin="10 0 0 0"/>
-                                <ToggleButton Style="{StaticResource LikeToReadIcons}" Content="{DynamicResource pendingfilled}" Tag="IsPendingButton" Cursor="Hand" Margin="10 0 0 0"/>
+                                <ToggleButton Style="{StaticResource LikeToReadIcons}" Content="{DynamicResource likedfilled}" Tag="IsLikedButton" Cursor="Hand" Margin="10 0 0 0" IsChecked="{Binding Liked}"/>
+                                <ToggleButton Style="{StaticResource LikeToReadIcons}" Content="{DynamicResource pendingfilled}" Tag="IsPendingButton" Cursor="Hand" Margin="10 0 0 0" IsChecked="{Binding ToRead}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
