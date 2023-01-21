@@ -18,11 +18,11 @@ So a lot of use of big texts and soft colors was appropriate.<br>
 ![](https://raw.githubusercontent.com/alvarocosin/Biblioteca/master/Biblioteca/res/main.png)
 
 ## Final result :bookmark_tabs:
-The main purpose of the tool is to be able to look for specific authors or books, and see if we have it and on what bookshelf it is, a sort function and a search bar were fundamental for the application to work well.<br>
+The main purpose of the tool is to be able to look for specific authors or books, and see if we have it and on what bookshelf it is, a sort function and a search bar were fundamental for the application to work well.
 <br>
 #### Search and sort tools:
 ![](https://raw.githubusercontent.com/alvarocosin/Biblioteca/master/Biblioteca/res/mainwindow.gif)
-Finally, I added two extra functions to have the possibility to classify books by liked and pending/to read, using two separate windows inside the application.<br>
+Finally, I added two extra functions to have the possibility to classify books by liked and pending/to read, using two separate windows inside the application.
 <br>
 #### List books as liked or to read:
 ![](https://raw.githubusercontent.com/alvarocosin/Biblioteca/master/Biblioteca/res/likedtoread.gif)
