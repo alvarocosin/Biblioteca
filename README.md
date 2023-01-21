@@ -13,7 +13,7 @@ El mito de Sísifo,Albert Camus,Álvaro
 Crime and Punishment,Fiodor Dostoievski,Álvaro
 ```
 The most important idea was to make a user friendly UI for this, as my parents would use the application too to check for books and make lists.
-So a lot of use of big texts and soft colors was appropriate.
+So a lot of use of big texts and soft colors was appropriate.<br>
 <br>This is what the main window looks like:
 ![](https://raw.githubusercontent.com/alvarocosin/Biblioteca/master/Biblioteca/res/main.png)
 
@@ -22,5 +22,5 @@ The main purpose of the tool is to be able to look for specific authors or books
 <br>Here's how it is implemented:
 ![](https://raw.githubusercontent.com/alvarocosin/Biblioteca/master/Biblioteca/res/mainwindow.gif)
 Finally, I added two extra functions to have the possibility to classify books by liked and pending/to read, using two separate windows inside the application.<br>
-This is how it looks like:
+<br>This is how it looks like:
 ![](https://raw.githubusercontent.com/alvarocosin/Biblioteca/master/Biblioteca/res/likedtoread.gif)
